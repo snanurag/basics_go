@@ -1,10 +1,10 @@
 package main
 
 /**
+
  If you are on mac then install htop utility to see the core-wise cpu usage.
  This program aims to visualize that binary generated from go run as multi-processor process.
  From htop it can be seen that the number of cores busy is equal to the threads running here.
-
 */
 
 import (
