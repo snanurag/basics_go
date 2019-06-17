@@ -2,6 +2,7 @@ package tree
 
 type Int1 interface {
 	IntFunc()
+	printImpl()
 }
 
 type Impl struct {
@@ -14,7 +15,7 @@ func printsomething() {
 }
 
 func (t *Impl) IntFunc() {
-	print("Impl IntFunc")
+	println("Impl IntFunc")
 }
 
 func (t *Impl) printImpl() {

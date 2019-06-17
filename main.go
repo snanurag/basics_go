@@ -5,7 +5,6 @@ import "./tree"
 func main() {
 
 	t := tree.Impl{}
-	// printsomething()
+	//printsomething()
 	t.IntFunc()
-
 }
