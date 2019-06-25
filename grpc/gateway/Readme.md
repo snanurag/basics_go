@@ -1,0 +1,1 @@
+1. Install latest protobuf using `brew install protobuf`
