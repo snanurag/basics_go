@@ -18,6 +18,6 @@ func (t *Impl) IntFunc() {
 	println("Impl IntFunc")
 }
 
-func (t *Impl) printImpl() {
-	print("Impl print")
-}
+//func (t *Impl) printImpl() {
+//	print("Impl print")
+//}
