@@ -18,6 +18,10 @@ func main() {
 	fmt.Println(a.Abs())
 	fmt.Println(a.getStr())
 
+	s := MyString("hi")
+	a = s
+	fmt.Println(a.Abs())
+	fmt.Println(a.getStr())
 }
 
 type MyFloat float64
@@ -34,3 +38,11 @@ func (f MyFloat) getStr() string {
 }
 
 type MyString string
+
+func (f MyString) Abs() float64 {
+	return 0
+}
+
+func (f MyString) getStr() string {
+	return "hi world!"
+}
