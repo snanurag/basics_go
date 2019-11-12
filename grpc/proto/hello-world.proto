@@ -15,7 +15,8 @@ service YourService {
     };
   }
 
-  rpc Hello() returns ("Hello World!") {
+
+  rpc Hello(StringMessage) returns (StringMessage) {
     option (google.api.http) = {
       get: "/v1/example/hello"
     };

@@ -16,7 +16,7 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
 
-	gw "./gateway" // Update
+	gw "../proto" // Update
 )
 
 var (
@@ -35,12 +35,13 @@ func run() error {
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
 	err := gw.RegisterYourServiceHandlerFromEndpoint(ctx, mux, *grpcServerEndpoint, opts)
+	
 	if err != nil {
 		return err
 	}
 
 	// Start HTTP server (and proxy calls to gRPC server endpoint)
-	return http.ListenAndServe(":8081", mux)
+	return http.ListenAndServe(":8000", mux)
 }
 
 func main() {
