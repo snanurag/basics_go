@@ -49,4 +49,20 @@ func (t *MyServer) Hello(context.Context, *gw.StringMessage) (*gw.StringMessage,
 	v := gw.StringMessage{
 		Value : "Hi from Get",
 	}
-	return &v , nil}
+	return &v , nil
+}
+
+// Check the CPU usage with multiple http requests. Every HTTP request starts a new thread and consumes full core in this case.
+func (t *MyServer) HelloFromInfitineLoop(context.Context, *gw.StringMessage) (*gw.StringMessage, error){
+
+	sum := 1
+	for sum < 1000 {
+		sum =1
+	}
+
+	v := gw.StringMessage{
+		Value : "Hello from infinite loop",
+	}
+	return &v , nil
+}
+

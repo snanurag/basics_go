@@ -22,5 +22,10 @@ service YourService {
     };
   }
 
+  rpc HelloFromInfitineLoop(StringMessage) returns (StringMessage) {
+    option (google.api.http) = {
+      get: "/v1/example/infinite"
+    };
+  }
   
 }
