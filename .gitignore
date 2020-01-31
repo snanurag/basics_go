@@ -3,3 +3,5 @@ go_basics
 *.pb.go
 *.pb.gw.go
 *.swagger.json
+.idea
+.vscode
