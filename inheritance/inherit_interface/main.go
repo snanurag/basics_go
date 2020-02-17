@@ -1,10 +1,10 @@
 package main
 
-import "./tree"
+import "./src"
 
 func main() {
 
-	t := tree.Impl{}
+	t := src.Impl{}
 	//printsomething()
 	t.IntFunc()
 }

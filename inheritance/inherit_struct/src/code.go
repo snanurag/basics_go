@@ -1,17 +1,16 @@
-package tree
+package src
 
-type Int1 interface {
-	IntFunc()
-	printImpl()
+import "fmt"
+
+type parent struct {
 }
 
 type Impl struct {
-	instance1 string
-	instance2 string
+	parent
 }
 
-func printsomething() {
-
+func (p *parent) PrintSomethingFromParent() {
+	fmt.Println("Hi from parent.")
 }
 
 func (t *Impl) IntFunc() {
