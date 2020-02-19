@@ -2,7 +2,7 @@ package math
 
 import "fmt"
 
-func min(x, y interface{}) interface{} {
+func Min(x, y interface{}) interface{} {
 	switch v := x.(type) {
 	case int:
 		if x.(int) < y.(int) {
