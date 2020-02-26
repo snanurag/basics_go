@@ -9,8 +9,8 @@ type Driver struct {
 type Controller struct {
 }
 
-func (d *Driver) hey() {
-	fmt.Print("Hey Driver!!")
+func (d *Controller) hey() {
+	fmt.Print("Hey Controller!!")
 }
 
 func main() {

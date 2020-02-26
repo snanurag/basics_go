@@ -11,6 +11,15 @@ func (a add) getResult() int {
 func getResult2(a add) int {
 	return a(3, 4)
 }
+
+func getResult3() add {
+	x := func(a, b int) int {
+		return a + b
+	}
+	var y add = x
+	return y
+}
+
 func main() {
 
 	x := func(a, b int) int {
@@ -22,4 +31,6 @@ func main() {
 	fmt.Println(getResult2(func(a int, b int) int {
 		return a + b
 	}))
+
+	fmt.Println(getResult3()(1, 2))
 }

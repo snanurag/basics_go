@@ -18,8 +18,8 @@ func main() {
 		b: 0,
 	}
 
-	fmt.Println(&h1 == &h2)
-	fmt.Println(h1 == h2)
+	fmt.Println(&h1 == &h2) // false
+	fmt.Println(h1 == h2)   //true
 	fmt.Printf("h1 and h2 pointer : %s %s", &h1, &h2)
 	fmt.Println()
 
