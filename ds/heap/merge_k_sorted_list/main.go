@@ -1,6 +1,9 @@
 package main
 
-import "github.com/snanurag/basics_go/collections"
+import (
+	"fmt"
+	"github.com/snanurag/basics_go/collections"
+)
 import "container/heap"
 
 type ListNode struct {
@@ -28,6 +31,7 @@ func mergeKLists(lists []*ListNode) *ListNode {
 				Value: l.Val,
 			}
 			heap.Push(&pq, &item)
+			l = l.Next
 		}
 	}
 
@@ -69,7 +73,12 @@ func main() {
 			Val: 6,
 		},
 	})
-	mergeKLists(list)
+	f := mergeKLists(list)
+	for f != nil {
+		fmt.Println(f.Val)
+		f = f.Next
+
+	}
 }
 
 /**
