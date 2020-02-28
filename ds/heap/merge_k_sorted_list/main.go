@@ -2,35 +2,23 @@ package main
 
 import (
 	"fmt"
-	"github.com/snanurag/basics_go/collections"
+	c "github.com/snanurag/basics_go/collections"
 )
-import "container/heap"
 
 type ListNode struct {
 	Val  int
 	Next *ListNode
 }
 
-type PQ struct {
-	collections.PriorityQueue
-}
-
-func (p *PQ) Less(i, j int) bool {
-	return p.PriorityQueue[i].Value.(int) < p.PriorityQueue[j].Value.(int)
-}
-
 func mergeKLists(lists []*ListNode) *ListNode {
-	pq := PQ{}
+	pq := c.NewHeap()
 	final := &ListNode{
 		Val:  0,
 		Next: nil,
 	}
 	for _, l := range lists {
 		for l != nil {
-			item := collections.Item{
-				Value: l.Val,
-			}
-			heap.Push(&pq, &item)
+			pq.Push(l.Val)
 			l = l.Next
 		}
 	}
@@ -38,7 +26,7 @@ func mergeKLists(lists []*ListNode) *ListNode {
 	head := final
 	for pq.Len() > 0 {
 		final.Next = &ListNode{
-			Val: heap.Pop(&pq).(*collections.Item).Value.(int),
+			Val: pq.Pop().(int),
 		}
 		final = final.Next
 	}
@@ -89,7 +77,7 @@ class Solution(object):
         :rtype: ListNode
         """
         head = point = ListNode(0)
-        q = PriorityQueue()
+        q = list()
         for l in lists:
             if l:
                 q.put((l.val, l))
