@@ -2,26 +2,21 @@ package main
 
 import (
 	"fmt"
-	treeset "github.com/emirpasic/gods/sets/treeset"
+	"github.com/snanurag/basics_go/collections/rbt"
+	"math/rand"
 )
 
 func main() {
-	fmt.Println(maxSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
-	fmt.Println(maxSlidingWindow([]int{1, 3, 1, 2, 0, 5}, 3))
+	maxSlidingWindow([]int{1, 3, 1, 2, 0, 5}, 3)
 }
-
-type Item struct {
-	i int
-}
-
 func maxSlidingWindow(nums []int, k int) []int {
 
 	var r []int
-	s := treeset.NewWithIntComparator()
+	s := rbt.NewWithIntComparator()
 	i := 0
 	for s.Size() < k && i < len(nums) {
-		s.Add(nums[i])
-		//fmt.Println(s)
+		s.Put(nums[i], rand.Int())
+		fmt.Println(s)
 		if s.Size() == k {
 			val, ok := getMaxValue(s)
 			if ok {
@@ -36,11 +31,11 @@ func maxSlidingWindow(nums []int, k int) []int {
 	return r
 }
 
-func getMaxValue(s *treeset.Set) (int, bool) {
+func getMaxValue(s *rbt.Tree) (int, bool) {
 	it := s.Iterator()
 	it.End()
 	if it.Prev() {
-		return it.Value().(int), true
+		return it.Key().(int), true
 	} else {
 		return -1, false
 	}

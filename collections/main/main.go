@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/snanurag/basics_go/collections"
+	"github.com/snanurag/basics_go/collections/heap"
 )
 
 func main() {
@@ -10,7 +10,7 @@ func main() {
 }
 
 func maxHeapExample() {
-	h := collections.NewHeap()
+	h := heap.NewHeap()
 
 	h.Push(3)
 	h.Push(2)

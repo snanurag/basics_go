@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	c "github.com/snanurag/basics_go/collections"
+	"github.com/snanurag/basics_go/collections/heap"
 )
 
 type ListNode struct {
@@ -11,7 +11,7 @@ type ListNode struct {
 }
 
 func mergeKLists(lists []*ListNode) *ListNode {
-	pq := c.NewHeap()
+	pq := heap.NewHeap()
 	final := &ListNode{
 		Val:  0,
 		Next: nil,

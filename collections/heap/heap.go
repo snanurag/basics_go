@@ -1,5 +1,5 @@
 // This example demonstrates a priority queue built using the heap interface.
-package collections
+package heap
 
 import (
 	"container/heap"
