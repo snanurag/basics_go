@@ -6,30 +6,30 @@ import (
 )
 
 func main() {
-	fmt.Println(maxSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
+	//fmt.Println(maxSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
 	fmt.Println(maxSlidingWindow([]int{1, 3, 1, 2, 0, 5}, 3))
-}
-
-type Item struct {
-	i int
 }
 
 func maxSlidingWindow(nums []int, k int) []int {
 
+	m := make(map[int]int)
 	var r []int
 	s := treeset.NewWithIntComparator()
 	i := 0
 	for s.Size() < k && i < len(nums) {
 		s.Add(nums[i])
+		m[nums[i]]++
 		//fmt.Println(s)
-		if s.Size() == k {
+		if i >= k-1 {
 			val, ok := getMaxValue(s)
 			if ok {
 				r = append(r, val)
 			} else {
 				return nil
 			}
-			s.Remove(nums[i-k+1])
+			if m[nums[i-k+1]]--; m[nums[i-k+1]] == 0 {
+				s.Remove(nums[i-k+1])
+			}
 		}
 		i++
 	}
