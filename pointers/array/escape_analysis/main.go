@@ -9,7 +9,6 @@ go build -gcflags '-m' ./main.go
 func main() {
 
 	var u [8192]int
-	u = [8192]int{}
 	u[0] = 0
 	go values(u)
 	fmt.Print(u[0])
