@@ -2,7 +2,7 @@ package main
 
 /**
 Complete escape analysis
-go build -gcflags '-m -l' ./main.go
+go build -gcflags '-m -l' ./fib_test.go
 */
 
 func main() {

@@ -4,7 +4,7 @@ import "fmt"
 
 /**
 Do escape analysis using the following command.
-go build -gcflags '-m' ./main.go
+go build -gcflags '-m' ./fib_test.go
 */
 func main() {
 
