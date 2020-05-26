@@ -1,4 +1,4 @@
-package main
+package returning_value_as_pointer
 
 func return8kb() [1024]int {
 	var s [1024]int

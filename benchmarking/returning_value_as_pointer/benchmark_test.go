@@ -1,4 +1,4 @@
-package main
+package returning_value_as_pointer
 
 import "testing"
 
