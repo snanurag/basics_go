@@ -37,12 +37,12 @@ type PriorityQueue struct {
 func (pq PriorityQueue) Len() int { return len(pq.arr) }
 
 func (pq PriorityQueue) Less(i, j int) bool {
-	// We want Pop to give us the highest, not lowest, priority so we use greater than here.
+	// IMP: If We want Pop to give us the highest, not lowest, priority so we use greater than here.
 	switch pq.arr[i].(type) {
 	case string:
 		return pq.arr[i].(string) > pq.arr[j].(string)
 	case int:
-		return pq.arr[i].(int) > pq.arr[j].(int)
+		return pq.arr[i].(int) < pq.arr[j].(int)
 	case float64:
 		return pq.arr[i].(float64) > pq.arr[j].(float64)
 	case float32:
