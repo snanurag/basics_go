@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/snanurag/basics_go/collections/heap"
+	"github.com/snanurag/basics_go/ds/heap"
 )
 
 func main() {
